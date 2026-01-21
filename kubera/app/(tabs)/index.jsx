@@ -52,7 +52,7 @@ const calculateSummary = async () => {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.greeting}>Financial Overview</Text>
+      <Text style={[styles.greeting, { color: '#fff' }]}>Financial Overview</Text>
       
       {/* Monthly Spend Widget */}
       <View style={[styles.card, styles.mainCard]}>
@@ -84,7 +84,7 @@ const calculateSummary = async () => {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f8fafc', padding: 20 },
+  container: { flex: 1, backgroundColor: '#000000', padding: 20 },
   greeting: { fontSize: 24, fontWeight: 'bold', color: '#1e293b', marginBottom: 20, marginTop: 10 },
   card: { backgroundColor: '#fff', padding: 20, borderRadius: 24, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10 },
   mainCard: { backgroundColor: '#2563eb', marginBottom: 20 },

@@ -4,8 +4,8 @@ import { Home, IndianRupee } from 'lucide-react-native';
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{ 
-      tabBarActiveTintColor: '#2563eb', // Blue for the active tab
-      headerStyle: { backgroundColor: '#ffffff' },
+      tabBarActiveTintColor: '#0ef116ff', // Blue for the active tab
+      headerStyle: { backgroundColor: '#000000' },
       headerTitleStyle: { fontWeight: '700' },
     }}>
       <Tabs.Screen

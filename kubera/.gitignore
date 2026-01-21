@@ -36,32 +36,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+app-example
+
 # generated native folders
 /ios
 /android
-
-kubera/node_modules/
-kubera/.expo/
-kubera/dist/
-kubera/web-build/
-kubera/expo-env.d.ts
-kubera/.kotlin/
-kubera/.metro-health-check*
-kubera/npm-debug.*
-kubera/yarn-debug.*
-*.apk
-*.aab
-*.app
-*.ipa
-
-# kubera local env files
-kubera/.env*.local
-kubera/.DS_Store
-kubera/*.pem
-kubera/*.tsbuildinfo
-kubera/.env
-
-*.vscode/
-*.idea/
-*.iml
-*.history/

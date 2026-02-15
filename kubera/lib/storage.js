@@ -66,30 +66,33 @@ export const saveExpense = async (newExpense) => {
   }
 };
 
-// lib/storage.js
-
-// ... (Keep your getAppData and saveAppData from before)
-
-export const getFinancialSummary = async () => {
-  const data = await getAppData();
-  
-  // 1. Calculate Monthly Spending
-  const currentMonth = new Date().toISOString().slice(0, 7); // e.g., "2026-01"
-  const monthlySpend = data.expenses
-    .filter(e => e.timestamp.startsWith(currentMonth))
-    .reduce((sum, e) => sum + Number(e.value), 0);
-
-  // 2. Calculate Total Assets (Sum of value_change)
-  const totalAssets = data.assets_ledger
-    .reduce((sum, a) => sum + Number(a.value_change), 0);
-
-  // 3. Calculate Total Debts
-  const totalDebts = data.debts_ledger
-    .reduce((sum, d) => sum + Number(d.value_change), 0);
-
-  return {
-    monthlySpend,
-    netWorth: totalAssets - totalDebts,
-    netDebt: totalDebts
-  };
+export const getCategories = async () => {
+  try {
+    const data = await getAppData();
+    return data.categories || [];
+  } catch (e) {
+    console.error("Failed to load categories", e);
+    return ['Groceries', 'Dining Out', 'Travel', 'Shopping', 'House','Health','Anthariksham Labs','Learning'];
+  }
 };
+
+export const getAssetCategories = async () => {
+  try {
+    const data = await getAppData();
+    return data.asset_categories || [];
+  } catch (e) {
+    console.error("Failed to load asset categories", e);
+    return ["Savings A/C","Checkings A/C","Stocks","Bonds","Property","Vehicle"];
+  }
+};
+
+export const getDebtCategories = async () => {
+  try {
+    const data = await getAppData();
+    return data.debt_categories || [];
+  } catch (e) {
+    console.error("Failed to load debt categories", e);
+    return ["Credit Card","Loan","Owing"];
+  }
+};
+
